@@ -70,4 +70,15 @@ namespace LinkedList {
 	int LList::length() {
 		return count;
 	}
+	void LList::sort() {
+		for (NNode::Node* i = first; i->next != 0; i=i->next) {
+			for (NNode::Node* j = i; j->next != 0; j = j->next) {
+				if (i->value < j->value) {
+					std::string tmp = i->value;
+					i->value = j->value;
+					j->value = tmp;
+				}
+			}
+		}
+	}
 }

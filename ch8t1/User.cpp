@@ -7,11 +7,12 @@ int main()
 
 	LList* mylist =new LList();
 	mylist->set("first node");
-	for (int i = 0; i < 100; i++)
-		mylist->pushBack("str - "+std::to_string(i));
-	for (int i = 0; i < 105; i++){
+	for (int i = 0; i < 10; i++)
+		mylist->pushBack("str - "+std::to_string(9-i));
+	mylist->sort();
+	while(mylist->next()){
 
-		std::cout << mylist->popBack().c_str() << '\n';
+		std::cout << mylist->get().c_str() << '\n';
 	}
 	std::cin.get();
 	return 0;
